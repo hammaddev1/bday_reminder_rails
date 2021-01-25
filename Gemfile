@@ -23,6 +23,8 @@ gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 gem 'jquery-rails', '~> 4.4'
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
+
+gem 'colorize', '~> 0.8.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
