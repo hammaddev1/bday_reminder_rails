@@ -1,0 +1,11 @@
+<%= form_with(model: @birthday_event, local: true) do |f| %>
+
+<%= f.label :date %>
+<%= f.date_select :date %>
+
+<%= f.label :bday_username %>
+<%= f.text_field :bday_username %>
+
+<%= f.submit "Add a birthday event" %>
+
+<% end %>

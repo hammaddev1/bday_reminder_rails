@@ -1,0 +1,10 @@
+<ul>
+  <% @birthday_events.each do |event| %>
+  <li>
+    <%= event.date %>
+  </li>
+  <li>
+    <%= event.bday_username %>
+  </li>
+  <% end %>
+</ul>
