@@ -2,7 +2,7 @@ class BirthdayEventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @birthday_events = BirthdayEvent.all()
+    @birthday_events = BirthdayEvent.current_user_events(current_user.id)
 
   end
 
