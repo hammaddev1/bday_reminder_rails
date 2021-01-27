@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+
   devise_for :users
   root to: 'user#show'
   devise_scope :user do
@@ -8,5 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :birthday_events
+  mount Sidekiq::Web => '/sidekiq'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

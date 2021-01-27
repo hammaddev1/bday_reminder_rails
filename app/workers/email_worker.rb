@@ -1,7 +1,10 @@
-module MailerHelper 
-require 'sendgrid-ruby'
-include SendGrid
-def send_email(user_email_address)
+class EmailWorker
+  require 'sendgrid-ruby'
+  include SendGrid
+  include Sidekiq::Worker
+  sidekiq_options retry: false
+
+  def perform(user_email_address)   
   from = SendGrid::Email.new(email: ENV["email_from"])
   to = SendGrid::Email.new(email: user_email_address)
   subject = ENV["email_subject"]
@@ -10,6 +13,5 @@ def send_email(user_email_address)
 
   sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
   response = sg.client.mail._('send').post(request_body: mail.to_json)
-
   end
 end
