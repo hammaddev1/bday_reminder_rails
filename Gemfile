@@ -27,6 +27,10 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'colorize', '~> 0.8.1'
 
 gem 'pry', '~> 0.13.1'
+
+gem 'figaro', '~> 1.2'
+
+gem 'sendgrid-ruby', '~> 6.3', '>= 6.3.8'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
